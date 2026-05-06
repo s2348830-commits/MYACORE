@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Tomodachi Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Discord風ログイン画面 -->
+    <div id="login-overlay">
+        <div class="discord-auth-box">
+            <div class="auth-header">
+                <div class="logo-placeholder"></div>
+                <h2>Tomodachi Web にアクセス</h2>
+            </div>
+            <div class="auth-body">
+                <p><strong>Tomodachi Web</strong> があなたのアカウントへのアクセスを要求しています。</p>
+                <div class="input-group">
+                    <label>ユーザー名</label>
+                    <input type="text" id="username-input" placeholder="名前を入力してください">
+                </div>
+            </div>
+            <div class="auth-footer">
+                <button id="cancel-btn">キャンセル</button>
+                <button id="authorize-btn">認証 (ログイン)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ゲームUI -->
+    <div id="game-ui" style="display: none;">
+        <div id="status-panel">
+            <div class="status-item">👛 財布: <span id="ui-wallet">0</span> G</div>
+            <div class="status-item">😊 満足度: <span id="ui-satisfaction">50</span></div>
+            <div class="status-item">🏥 状態: <span id="ui-status">Normal</span></div>
+        </div>
+        <div id="news-ticker">
+            <div id="news-content">ここにニュースが流れます</div>
+        </div>
+    </div>
+
+    <!-- Three.js 描画エリア -->
+    <div id="canvas-container"></div>
+
+    <!-- ライブラリの読み込み -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
